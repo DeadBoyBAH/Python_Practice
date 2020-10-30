@@ -1,0 +1,21 @@
+def f(x):
+    return (3 * x**2 + 4*x + 1) / (4 * x**2 + 3)
+
+
+print("Введите исходные данные: ")
+
+a = float(input("a: "))
+b = float(input("b: "))
+n = int(input("n: "))
+
+h = (b - a) / n
+s = (f(a) + f(b)) / 2
+x = a + h
+
+while x < b - h / 2:
+    s += f(x)
+    x += h
+
+s *= h
+
+print("Результат интеграла: ", s)
