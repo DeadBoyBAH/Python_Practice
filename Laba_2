@@ -1,0 +1,8 @@
+from math import *
+
+x = float(input("Введите, пожалуйста, x: "))
+
+y = sqrt(5*abs((cos(x) - sin(7*(x**2)))/x) + log(abs(x)))
+y *= x**(-5)
+
+print("Результат: ", y)
