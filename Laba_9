@@ -1,0 +1,31 @@
+from math import *
+
+
+def f(x):
+    return exp(x/2) - log(x) + x - 5
+
+
+a = float(input("Введите начальную точку интервала (а): "))
+b = float(input("Введите конечную точку интервала (b): "))
+e = float(input("Введите погрешность: "))
+
+z = f(a)
+t = f(b)
+x = a
+
+while True:
+    u = x
+    x = a - (b - a)/(t - z) * z
+    y = f(x)
+
+    if y*z < 0:
+        a = x
+        z = y
+    else:
+        b = x
+        t = y
+
+    if abs(u - x) < e:
+        break
+
+print("Корень уравнения: ", x, " Проверка вычисления с заданным корнем: ", f(x))
