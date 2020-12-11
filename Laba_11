@@ -1,0 +1,28 @@
+from math import *
+
+x = float(input("Введите x: "))
+
+s = 0
+
+for k in range(1, 5):
+    print("Новая итерация внешнего цикла!!! " + str(k) )
+    s1 = 0
+    print("Промежуточная сумма " + str(s1))
+    for n in range(1, 10):
+        print("Новая итерация внутреннего цикла!!! " + str(n))
+        if k >= n:
+            print(str(k) + " больше или равно " + str(n))
+            a = 0.1
+        else:
+            print(str(k) + " меньше " + str(n))
+            a = 1
+
+        print("a = " + str(a))
+
+        s1 += pow(a*x, k/n)
+        print("Промежуточная сумма " + str(s1))
+
+    s += s1
+    print("Вся сумма: " + str(s))
+
+print("Сумма = ", s)
